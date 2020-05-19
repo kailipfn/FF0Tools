@@ -33,7 +33,6 @@ public class Main {
                 }
             }
         }
-        //将来の参照用に accessToken を永続化する
         User user = twitter.verifyCredentials();
 
         IDs id = twitter.getFollowersIDs(user.getScreenName(), -1);
