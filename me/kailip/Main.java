@@ -43,7 +43,18 @@ public class Main {
             twitter.destroyBlock(i);
             Thread.sleep(50);
         }
-        System.out.println("合計" + count + "人ブロ解しました！");
+
+        IDs id2 = twitter.getFriendsIDs(user.getScreenName(), -1);
+        int count2 = 0;
+        for (long i : id2.getIDs()) {
+            twitter.createBlock(i);
+            count2++;
+            twitter.destroyBlock(i);
+            Thread.sleep(50);
+        }
+
+        int count3 = count + count2;
+        System.out.println("合計" + count3 + "人ブロ解しました！");
         System.exit(0);
     }
 }
